@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-scraping-pod
+  namespace: web-scrapping
+spec:
+  containers:
+  - name: web-scraping-container
+    image: nginx:latest
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "0.1"
+      limits:
+        memory: "1Gi"
+        cpu: "1"
+  restartPolicy: Always

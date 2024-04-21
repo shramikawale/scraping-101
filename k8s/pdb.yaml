@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: web-scraping-pdb
+  namespace: web-scrapping
+spec:
+  selector:
+    matchLabels:
+      app: web-scraping
+  maxUnavailable: 10%

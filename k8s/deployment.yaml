@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-scraping-deployment
+  namespace: web-scrapping
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: web-scraping
+  template:
+    metadata:
+      labels:
+        app: web-scraping
+    spec:
+      containers:
+      - name: web-scraping-pod
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "1Gi"
+          requests:
+            memory: "64Mi"
